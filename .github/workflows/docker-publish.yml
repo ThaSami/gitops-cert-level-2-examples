@@ -57,7 +57,7 @@ jobs:
           context: ./image-updater/source-code
           file: ./image-updater/source-code/Dockerfile
           push: true
-          tags: ghcr.io/${REPO}:${{ inputs.docker_tag }}
+          tags: ghcr.io/${{ env.REPO }}:${{ inputs.docker_tag }}
 
 
 
