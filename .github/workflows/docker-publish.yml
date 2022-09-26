@@ -46,7 +46,7 @@ jobs:
 
       - name: downcase REPO
         run: |
-          echo "REPO=${github.repository,,}" >>${GITHUB_ENV}
+          echo "REPO=$(echo ${{github.repository}} | tr A-Z a-z)" >>${GITHUB_ENV}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
