@@ -11,22 +11,19 @@ steps:
   clone:
     title: "Cloning repository"
     type: "git-clone"
-    repo: "codefresh-contrib/gitops-certification-examples"
+    repo: "ThaSami/gitops-certification-examples"
     revision: "main"
     stage: "clone"
 
   build:
     title: "Building Docker image"
     type: "build"
-    image_name: "kostiscodefresh/gitops-simple-app"
+    image_name: "ThaSami/gitops-simple-app"
     working_directory: "${{clone}}/source-code"
     tag: main
     tags:
-    - "latest"
-    - "v1.0"
+      - "latest"
+      - "v1.0"
     dockerfile: "Dockerfile"
     stage: "build"
     registry: dockerhub
-
-  
-
