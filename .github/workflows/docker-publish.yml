@@ -54,7 +54,8 @@ jobs:
           context: ./image-updater/source-code
           file: ./image-updater/source-code/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ inputs.docker_tag }}
+          run: REPO=$(echo "${{ github.repository }}" | tr A-Z a-z);
+          tags: ghcr.io/${REPO}:${{ inputs.docker_tag }}
 
 
 
